@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import json
 import os
 
-dataset = pd.read_csv('./origin.csv',encoding="Windows-1252", delimiter=";")
+dataset = pd.read_csv('./2021-2022 NBA Player Stats - Playoffs.csv',encoding="Windows-1252", delimiter=";")
 
 result_dir = './players_input'
 for _, row in dataset.iterrows():
