@@ -6,6 +6,7 @@ import json
 import os
 
 dataset = pd.read_csv('./2021-2022 NBA Player Stats - Playoffs.csv',encoding="Windows-1252", delimiter=";")
+dataset.rename(columns=lambda s: s.replace("2", "two").replace("3", "three").replace("%", "p"), inplace=True)
 
 result_dir = './players_input'
 for _, row in dataset.iterrows():
