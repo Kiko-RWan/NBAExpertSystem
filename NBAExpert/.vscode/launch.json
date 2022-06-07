@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch NBA",
+            "request": "launch",
+            "mainClass": "NBA",
+            "projectName": "NBAExpert_d9b683d2"
+        },
+        {
+            "type": "java",
+            "name": "Launch TippingClass",
+            "request": "launch",
+            "mainClass": "TippingClass",
+            "projectName": "NBAExpert_d9b683d2"
+        },
+        {
+            "type": "java",
             "name": "Launch External Terminal",
             "request": "launch",
             "console": "externalTerminal",
