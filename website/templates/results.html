@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+
+{% block title %}
+result
+{% endblock title %}
+
+{% block css1 %}
+<style>
+  .team a {
+    font-family: Montserrat;
+    color: #141414;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+</style>
+
+{% endblock css1 %}
+
+{% block body1 %}
+<section class="club-main-stat">
+
+
+<div class="container">
+  <div class="row">
+    <div class = "col-md-12 col-sm-12">
+      <div class = "last-match">
+        <div class="player-image">
+          <img src="/static/images/playerimg/DAngeloRussell.jpg" alt="">
+        </div>
+        <div class = "team">
+          <a> D'Angelo Russell</a>
+        </div>
+        <div>
+          <canvas id="Chart1"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class = "col-md-12 col-sm-12">
+      <div class = "last-match">
+        <div class="player-image">
+          <img src="https://www.basketball-reference.com/req/202106291/images/players/kuminjo01.jpg" alt="">
+        </div>
+        <div class = "team">
+          <a> Jonathan Kumingan</a>
+        </div>
+        <div>
+          <canvas id="Chart2"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class = "col-md-12 col-sm-12">
+      <div class = "last-match">
+        <div class="player-image">
+          <img src="/static/images/playerimg/AndreIguodala.jpg" alt="">
+        </div>
+        <div class = "team">
+          <a> Andre Iguodala</a>
+        </div>
+        <div>
+          <canvas id="Chart3"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- <div>
+  <canvas id="myChart"></canvas>
+</div> -->
+
+{% endblock body1 %}
+
+{% block js1 %}
+
+<script>
+  const data1 = {
+    labels: [
+        "breaking",
+        "defensive",
+        "leading",
+        "rebounding",
+        "shooting"
+    ],
+    datasets: [{
+      label: 'user',
+      data: [68, 50, 41, 57, 62],
+      fill: true,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgb(255, 99, 132)',
+      pointBackgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    }, {
+      label: 'source',
+      data: [81.25, 49.93, 50.06, 49.99, 66.14],
+      fill: true,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgb(54, 162, 235)',
+      pointBackgroundColor: 'rgb(54, 162, 235)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(54, 162, 235)'
+    }]
+  };
+
+  const config1 = {
+    type: 'radar',
+    data: data1,
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+  };
+
+  const myChart = new Chart(
+    document.getElementById('Chart1'),
+    config1
+  );
+</script>
+
+<script>
+  const data2 = {
+    labels: [
+        "breaking",
+        "defensive",
+        "leading",
+        "rebounding",
+        "shooting"
+    ],
+    datasets: [{
+      label: 'user',
+      data: [68, 50, 41, 57, 62],
+      fill: true,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgb(255, 99, 132)',
+      pointBackgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    }, {
+      label: 'source',
+      data: [70.00, 49.99, 43.37, 45.14, 81.25],
+      fill: true,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgb(54, 162, 235)',
+      pointBackgroundColor: 'rgb(54, 162, 235)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(54, 162, 235)'
+    }]
+  };
+
+  const config2 = {
+    type: 'radar',
+    data: data2,
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+  };
+
+  const myChart2 = new Chart(
+    document.getElementById('Chart2'),
+    config2
+  );
+</script>
+
+<script>
+  const data3 = {
+    labels: [
+        "breaking",
+        "defensive",
+        "leading",
+        "rebounding",
+        "shooting"
+    ],
+    datasets: [{
+      label: 'user',
+      data: [68, 50, 41, 57, 62],
+      fill: true,
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgb(255, 99, 132)',
+      pointBackgroundColor: 'rgb(255, 99, 132)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(255, 99, 132)'
+    }, {
+      label: 'source',
+      data: [58.25, 47.82, 60.01, 48.80, 58.21],
+      fill: true,
+      backgroundColor: 'rgba(54, 162, 235, 0.2)',
+      borderColor: 'rgb(54, 162, 235)',
+      pointBackgroundColor: 'rgb(54, 162, 235)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(54, 162, 235)'
+    }]
+  };
+
+  const config3 = {
+    type: 'radar',
+    data: data3,
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3
+        }
+      }
+    },
+  };
+
+  const myChart3 = new Chart(
+    document.getElementById('Chart3'),
+    config3
+  );
+</script>
+
+{% endblock js1 %}

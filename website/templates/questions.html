@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+
+{% block title %}
+questionaire
+{% endblock title %}
+
+{% block css1 %}
+<style>
+.filter-items-wrap div.filter-title {
+    padding-bottom: 7px;
+    display: block;
+    font-size: 14px;
+    color: #666;
+    line-height: normal;
+    font-weight:400
+}
+
+.filter-item label {
+    padding-bottom: 7px;
+    display: block;
+    font-size: 14px;
+    color: #666;
+    line-height: normal;
+    font-weight:400
+}
+</style>
+
+<!-- for range slider -->
+<style>
+    .slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: rgba(255, 187, 0, 0.748);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgba(255, 187, 0, 0.748);
+  cursor: pointer;
+}
+</style>
+{% endblock css1 %}
+
+{% block body1 %}
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <h1>questionaire</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--CONTACT WRAP BEGIN-->
+<section class="contacts-wrap">
+    <div class="container">
+        <div class="row">
+            <div>
+                <h4>定义您的球员</h4>
+                <div class="leave-comment-wrap">
+                    <form action="/" method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="filter-items-wrap">
+                                    <div class="filter-title">您希望球员扮演的角色（多选）</div>
+                                    <div class="filter-item">
+                                        <ul>
+                                            <li>
+                                                <input type="checkbox" class="filter-check" name="check" value="PG" id="PG">
+                                                <label for="PG">point guard</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="filter-check" name="check" value="SG" id="SG">
+                                                <label for="SG">shooting guard</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="filter-check" name="check" value="SF" id="SF">
+                                                <label for="SF">small forward</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="filter-check" name="check" value="PF" id="PF">
+                                                <label for="PF">power forward</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" class="filter-check" name="check" value="C" id="C">
+                                                <label for="C">center</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>您期望球员的投射能力<i></i></span>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="50" class="slider" name="shooting">
+                                            <p style="margin-top: 5px;"><span></span></p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>您期望球员的组织能力<i></i></span>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="50" class="slider" name="leading">
+                                            <p style="margin-top: 5px;"><span></span></p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>您期望球员的防守能力<i></i></span>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="50" class="slider" name="defensive">
+                                            <p style="margin-top: 5px;"><span></span></p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>您期望球员的攻框能力<i></i></span>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="50" class="slider" name="breaking">
+                                            <p style="margin-top: 5px;"><span></span></p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>您期望球员的篮板能力<i></i></span>
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="50" class="slider" name="rebounding">
+                                            <p style="margin-top: 5px;"><span></span></p>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="comment-submit">commit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--CONTACT WRAP END-->
+
+{% endblock body1 %}
+
+{% block js1 %}
+<script>
+var sliders = document.getElementsByClassName("slidecontainer");
+for (let i = 0; i < sliders.length; i++) {
+    let output = sliders[i].getElementsByTagName("span")[0];
+    let slider = sliders[i].getElementsByTagName("input")[0];
+    output.innerHTML = "Value: " + slider.value;
+
+    slider.oninput = function() {
+        output.innerHTML = "Value: " + slider.value;
+    }
+}
+</script>
+{% endblock js1 %}
