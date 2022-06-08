@@ -46,9 +46,7 @@ class Player {
 
 public class NBA {
 	public static void main(String[] args) throws Exception {
-		String workingDir = Paths.get("").toAbsolutePath().toString();
-		String inputDir = workingDir + "/../source/players_input";
-		System.out.println("inputDir: " + inputDir);
+		String inputDir = "./input/";
 		
 		File inputFileRoot = new File(inputDir);
 		for (File file : inputFileRoot.listFiles()) {
